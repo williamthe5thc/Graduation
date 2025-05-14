@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Provo High School Class of 2025 - Senior Spotlights</title>
+    <title>Class of 2025 - Senior Spotlights</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,6 +50,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            scroll-margin-top: 30px;
         }
         
         .senior-info {
@@ -89,9 +90,51 @@
             color: white;
         }
         
+        .nav-index {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .nav-index h3 {
+            margin-top: 0;
+            color: #00205B;
+        }
+        
+        .nav-index ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-index li {
+            margin-bottom: 5px;
+        }
+        
+        .nav-index a {
+            text-decoration: none;
+            color: #00205B;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .nav-index a:hover {
+            background-color: #d0d0d0;
+        }
+        
         @media (max-width: 768px) {
             .senior-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .nav-index ul {
+                flex-direction: column;
             }
         }
     </style>
@@ -99,82 +142,310 @@
 <body>
     <header>
         <div class="container">
-            <h1>Provo High School</h1>
-            <p>Class of 2025 - Senior Spotlights</p>
+            <h1>Class of 2025</h1>
+            <p>Senior Spotlights</p>
         </div>
     </header>
     
     <div class="container">
+        <div class="nav-index">
+            <h3>Graduate Directory</h3>
+            <ul>
+                <li><a href="#zoe-deucher">Zoe Deucher</a></li>
+                <li><a href="#benjamin-woolstenhulme">Benjamin Woolstenhulme</a></li>
+                <li><a href="#max-collette">Max Collette</a></li>
+                <li><a href="#sawyer-collette">Sawyer Collette</a></li>
+                <li><a href="#kirsten-hoelzer">Kirsten Hoelzer</a></li>
+                <li><a href="#madi-williams">Madi Williams</a></li>
+                <li><a href="#madelyn-peterson">Madelyn Peterson</a></li>
+                <li><a href="#hailey-jenks">Hailey Jenks</a></li>
+                <li><a href="#aaron-taylor">Aaron Taylor</a></li>
+                <li><a href="#kate-reichner">Kate Reichner</a></li>
+                <li><a href="#nick-schooley">Nick Schooley</a></li>
+                <li><a href="#jack-weaver">Jack Weaver</a></li>
+                <li><a href="#hazel-weaver">Hazel Weaver</a></li>
+                <li><a href="#james-wytiaz">James Wytiaz</a></li>
+            </ul>
+        </div>
+        
         <div class="senior-grid">
-            <!-- Senior 1 -->
-            <div class="senior-card">
+            <!-- Zoe Deucher -->
+            <div id="zoe-deucher" class="senior-card">
                 <div class="senior-info">
                     <div class="senior-photo">
                         <span>Photo</span>
                     </div>
                     <div class="senior-details">
-                        <h2>Emily Johnson</h2>
-                        <p><strong>GPA:</strong> 4.0</p>
-                        <p><strong>Activities:</strong> Debate Team Captain, Student Council, Choir</p>
-                        <p><strong>College:</strong> Brigham Young University</p>
+                        <h2>Zoe Deucher</h2>
+                        <p><strong>School:</strong> Timpview High School</p>
+                        <p><strong>Activities:</strong> Track Team, Flag Football, Water Sports</p>
+                        <p><strong>Future Plans:</strong> Study Sports Medicine in College</p>
                     </div>
                 </div>
                 <div class="bio">
-                    <p>Emily has been an outstanding student and leader throughout her time at Provo High. As captain of the debate team, she led the group to state championships two years in a row. She plans to study Political Science at BYU and hopes to eventually attend law school. In her free time, Emily enjoys hiking in the nearby mountains and volunteering at the local animal shelter.</p>
+                    <p>Zoe is our freak of nature child when it comes to strength. She grew up playing soccer and flag football with the boys, and nobody in the family ever wanted to race her. She grew up on a boat so she likes fishing, swimming, water skiing, and wake boarding. During the winter she likes to snow ski.</p>
+                    <p>She is on a club track team that runs year round and on the Timpview track team where she runs sprints and throws javelin. Timpview has won the state championship the last two years in a row and is going for a three peat this year.</p>
+                    <p>In her words, her favorite part of school was that she got to know almost everyone at Timpview and had the chance to make friends from other schools, which made high school fun.</p>
+                    <p><strong>Advice:</strong> "Don't worry too much about what others think or the drama that could be going on because it won't matter when you graduate. Be who you are and own it."</p>
                 </div>
             </div>
             
-            <!-- Senior 2 -->
-            <div class="senior-card">
+            <!-- Benjamin Woolstenhulme -->
+            <div id="benjamin-woolstenhulme" class="senior-card">
                 <div class="senior-info">
                     <div class="senior-photo">
                         <span>Photo</span>
                     </div>
                     <div class="senior-details">
-                        <h2>Michael Rodriguez</h2>
-                        <p><strong>GPA:</strong> 3.95</p>
-                        <p><strong>Activities:</strong> Basketball Team, Science Club, Spanish Club</p>
-                        <p><strong>College:</strong> University of Utah</p>
+                        <h2>Benjamin Woolstenhulme</h2>
+                        <p><strong>Interests:</strong> Computer Programming, Music, Reading, Hiking</p>
+                        <p><strong>Activities:</strong> Orchestra and Symphony</p>
+                        <p><strong>Future Plans:</strong> University of Utah, then Mission</p>
                     </div>
                 </div>
                 <div class="bio">
-                    <p>Michael has been a standout athlete and scholar at Provo High. He helped lead the basketball team to regional finals while maintaining nearly perfect grades. Michael has received a scholarship to study Computer Science at the University of Utah. He loves coding and has already developed several apps, including one that helps students navigate the school schedule. When not studying or playing basketball, Michael enjoys mountain biking and photography.</p>
+                    <p>Benjamin spent a lot of time in high school exploring the Wild West and playing with area orchestras and symphonies. He enjoyed classes that actually got to do cool things, like plating pennies with brass in chemistry class. He's very grateful for all of the awesome teachers that did such a good job making the classes fun to go to.</p>
+                    <p>His interests include computer programming, playing and writing music, reading funny science books, video games, hiking and camping.</p>
+                    <p><strong>Advice:</strong> "Take some shop classes, they're fun, give hardly any homework, and I feel really proud anytime I look at one of the things I made."</p>
                 </div>
             </div>
             
-            <!-- Senior 3 -->
-            <div class="senior-card">
+            <!-- Max Collette -->
+            <div id="max-collette" class="senior-card">
                 <div class="senior-info">
                     <div class="senior-photo">
                         <span>Photo</span>
                     </div>
                     <div class="senior-details">
-                        <h2>Sarah Thompson</h2>
-                        <p><strong>GPA:</strong> 3.89</p>
-                        <p><strong>Activities:</strong> Orchestra (First Violin), Math Club, Yearbook Editor</p>
-                        <p><strong>College:</strong> Utah Valley University</p>
+                        <h2>Max Collette</h2>
+                        <p><strong>School:</strong> Timpanogos High School</p>
+                        <p><strong>Activities:</strong> Basketball, Track, DLI Spanish Program</p>
+                        <p><strong>Future Plans:</strong> Serving in Knoxville Tennessee Spanish Speaking Mission</p>
                     </div>
                 </div>
                 <div class="bio">
-                    <p>Sarah has been a dedicated musician and scholar during her time at Provo High. As first violin in the school orchestra, she has performed in numerous concerts and competitions. Sarah plans to study Music Education at UVU with the goal of becoming a high school music teacher. She has also been the driving force behind this year's award-winning yearbook. In her spare time, Sarah enjoys reading classic literature and baking desserts for her friends and family.</p>
+                    <p>Max was on the freshman basketball team and track team. He has completed the DLI program and is fluent in Spanish. Max loves sports of all kinds and trying new things. He has played basketball for years. Picked up golf last year and has created a passion for roller skating.</p>
+                    <p>Max also plays guitar and piano. He has a happy demeanor, is a great traveler and a joy to be with. Max begins his mission on July 7th. He will be serving in the Knoxville Tennessee Spanish speaking mission.</p>
+                    <p><strong>Advice:</strong> "If something is not right in your life and not working for you, do the scary thing and have the courage to change it."</p>
                 </div>
             </div>
             
-            <!-- Senior 4 -->
-            <div class="senior-card">
+            <!-- Sawyer Collette -->
+            <div id="sawyer-collette" class="senior-card">
                 <div class="senior-info">
                     <div class="senior-photo">
                         <span>Photo</span>
                     </div>
                     <div class="senior-details">
-                        <h2>David Wilson</h2>
-                        <p><strong>GPA:</strong> 3.92</p>
-                        <p><strong>Activities:</strong> Football Team, Robotics Club President, Eagle Scout</p>
-                        <p><strong>College:</strong> Utah State University</p>
+                        <h2>Sawyer Collette</h2>
+                        <p><strong>School:</strong> Timpview High School</p>
+                        <p><strong>Activities:</strong> Swim Team, Water Polo, Ceramics, Cooking</p>
+                        <p><strong>Future Plans:</strong> Utah State University, Medical/Dental Field</p>
                     </div>
                 </div>
                 <div class="bio">
-                    <p>David has excelled both on and off the field at Provo High. As a key member of the football team and president of the robotics club, he has demonstrated versatility and leadership. David recently completed his Eagle Scout project, building a new playground for a local elementary school. He will be attending Utah State University on a scholarship to study Mechanical Engineering. When not working on robotics projects, David enjoys fishing, camping, and helping coach youth football.</p>
+                    <p>Sawyer has been on the Swim team for 4 years and plays water polo, was accepted into the national competition for high school ceramic arts and competed in Prostart food competitions.</p>
+                    <p>Sawyer loves to be in the water and has a passion and talent for playing water polo. He is very artistic and everything he creates is meticulous and beautiful. Sawyer is a fabulous cook. He also plays the piano and has a special talent for keeping track of everything in the house and finding it for his mother.</p>
+                    <p>Sawyer will be attending Utah State this Fall. He intends to study in the medical or dental field and check out Utah State's Chocolate making program.</p>
+                    <p><strong>Advice:</strong> "If there is something you want to do or accomplish that is hard or scary, do it anyway. You can do it."</p>
+                </div>
+            </div>
+            
+            <!-- Kirsten Hoelzer -->
+            <div id="kirsten-hoelzer" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Kirsten Hoelzer</h2>
+                        <p><strong>School:</strong> Timpview High School</p>
+                        <p><strong>Activities:</strong> Volleyball, Medical Assistant Internship</p>
+                        <p><strong>Future Plans:</strong> BYU, Premed</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>During her four years at Timpview, Kirsten has effectively balanced a rigorous academic load and extracurricular activities. She has been on the volleyball team and has also played club volleyball up until this current season.</p>
+                    <p>During her last semester of high school she has completed 160 hours of a medical assistant internship and will be receiving her MA certification. Kirsten will be attending BYU in the fall where she will be studying premed.</p>
+                    <p><strong>Advice:</strong> "Take a few classes (like Health, Fitness for Life, and Financial Literacy) online during the summer so you don't waste time taking them in school."</p>
+                </div>
+            </div>
+            
+            <!-- Madi Williams -->
+            <div id="madi-williams" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Madi Williams</h2>
+                        <p><strong>School:</strong> Maser Prep Academy</p>
+                        <p><strong>Future Plans:</strong> Mission, then Interior Design at UVU</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Madi is graduating from Maser Prep Academy. She has plans to turn in her mission papers and begin serving in October. After her mission, Madi hopes to study interior design at UVU.</p>
+                    <p>She is a fun, bright girl and believes that everyone should take themselves less seriously and enjoy life more!</p>
+                </div>
+            </div>
+            
+            <!-- Madelyn Peterson -->
+            <div id="madelyn-peterson" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Madelyn Peterson</h2>
+                        <p><strong>Activities:</strong> Dance (15 years)</p>
+                        <p><strong>Future Plans:</strong> BYU-Idaho, then Mission</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Madelyn has loved to dance since she was a little girl. She started when she was 3 so she's spent the last 15 years of her life at a dance studio. The look on her face when she's dancing sums it all up. It is pure joy!</p>
+                    <p>Madelyn plans to attend BYU-I in the fall and then serve a mission next year. She has loved high school, even though it hasn't always been easy. She's endured some of the hardest things in life and done it with a smile. She's a ray of light, always willing to help and always willing to share her testimony that she's developed through some trying times.</p>
+                    <p><strong>Advice:</strong> "Go to everything. Be involved. Enjoy your time in high school."</p>
+                </div>
+            </div>
+            
+            <!-- Hailey Jenks -->
+            <div id="hailey-jenks" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Hailey Jenks</h2>
+                        <p><strong>Schools:</strong> Spanish Fork, Timpview, and Timpanogos</p>
+                        <p><strong>Activities:</strong> FFA Treasurer, FCCLA, Fashion Design, Cosmetology</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Hailey loved her high school experience! She attended Spanish fork, Timpview, and Timpanogos through her four years of high school. She joined FFA for two years and was the treasurer in her second year.</p>
+                    <p>She was in the club FCCLA and competed in the star events for fashion design and placed third in state and got a bronze medal at the national competition! For her senior year she enrolled into the cosmetology program at the MTECH in Spanish fork and is enjoying every second of it.</p>
+                    <p><strong>Advice:</strong> "The longer you wait to do an assignment the older you are, and some people believe the older you are the wiser you are. Therefore the longer you wait to do an assignment the more wise you will be."</p>
+                </div>
+            </div>
+            
+            <!-- Aaron Taylor -->
+            <div id="aaron-taylor" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Aaron Taylor</h2>
+                        <p><strong>Schools:</strong> Timpview, Utah Academy of Sciences (UCAS)</p>
+                        <p><strong>Activities:</strong> UVU Classes, Cello, Disc Golf, Rockhounding</p>
+                        <p><strong>Future Plans:</strong> Continue at UVU studying Geology or Science</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Aaron grew up in Provo and Spanish fork. He loves animals, sewing, and the beauty industry. He played tennis in junior high and joined FFA and FCCLA for high school. Aaron transferred from Timpview to the Utah Academy of Sciences (UCAS) for his sophomore year. He's enjoyed taking classes on UVU campus, where he just received his associate's degree.</p>
+                    <p>Aaron loves to disc golf, fossil hunt, rockhound, play the cello, hang out with his girlfriend, Ivy, and spend time outdoors. Aaron plans to continue at UVU where he'll continue studying geology or another area of science.</p>
+                    <p>Aaron probably wouldn't have a piece of wisdom to share because he doesn't like being in the limelight, but by his life, you can see that he cares about being kind, thoughtful, and curious about people and the world.</p>
+                </div>
+            </div>
+            
+            <!-- Kate Reichner -->
+            <div id="kate-reichner" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Kate Reichner</h2>
+                        <p><strong>School:</strong> Timpview High School</p>
+                        <p><strong>Activities:</strong> Swim Team, Cheer Team, Student Government</p>
+                        <p><strong>Future Plans:</strong> Utah Tech Swim Team</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Kate has loved her time at Timpview. She has worked so hard in school and in sports. She was on the swim team and the cheer team for all four years. She was also a part of Student Government her junior and senior years. She loved the chance she had to get to know so many people, & has loved her friends and teachers at Timpview.</p>
+                    <p>Kate signed with the Utah Tech swim team, so she is headed to St. George in the fall. She's excited to swim in college - she's worked so hard to achieve that goal.</p>
+                    <p><strong>Advice:</strong> "Get involved in clubs or sports to make good friends, and don't forget to have fun along the way! Create strong relationships with your teachers by participating in class and asking for help when needed. Stay organized, set goals, and take care of yourself so you can make the most of your high school experience."</p>
+                </div>
+            </div>
+            
+            <!-- Nick Schooley -->
+            <div id="nick-schooley" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Nick Schooley</h2>
+                        <p><strong>Interests:</strong> Soccer, Basketball, Snowboarding, Boating, Backpacking</p>
+                        <p><strong>Future Plans:</strong> Mission to San Antonio, Texas, then BYU</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Looking back, high school was fun, but if you had asked Nick a few years ago that would definitely not have been his answer. Moving to a new State and new school in Utah from South Carolina was not fun. He sat alone at lunch for the first two weeks. Then he met a bozo named "The Jack," and things got better from there. He met some great friends at school and in the ward, and then discovered his new passion: snowboarding.</p>
+                    <p>Plans after high school first include serving a mission to San Antonio, Texas. When he returns, he'll be attending BYU here in Provo.</p>
+                    <p><strong>Advice:</strong> "If your mom is making you take AP calc, take BC for the first semester, then switch to AB the second semester. You'll learn it much better. Also, avoid going number 2 in the school bathrooms, and don't bum around (too much)."</p>
+                </div>
+            </div>
+            
+            <!-- Jack Weaver -->
+            <div id="jack-weaver" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Jack Weaver</h2>
+                        <p><strong>Activities:</strong> Track</p>
+                        <p><strong>Interests:</strong> All Sports, Nutrition, Guitar, Window Washing</p>
+                        <p><strong>Future Plans:</strong> Mission in El Salvador West (August 18)</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Jack grew throughout high school—physically, spiritually, emotionally, and academically. Track played a significant role in shaping his high school journey.</p>
+                    <p>Jack loves all sports, basketball, skiing, football, surfing, hiking, pickleball and skateboarding. He enjoys eating well, nutrition, the science of exercise and considers raw milk and honey a great treat. Every so often you will find Jack playing the guitar or selling window washing.</p>
+                    <p>He will serve a mission in El Salvador West, starting August 18 and then attend college upon completion.</p>
+                    <p><strong>Advice:</strong> "Drop out if you can."</p>
+                </div>
+            </div>
+            
+            <!-- Hazel Weaver -->
+            <div id="hazel-weaver" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>Hazel Weaver</h2>
+                        <p><strong>Activities:</strong> Cheer</p>
+                        <p><strong>Interests:</strong> Art, Surfing, Snow Skiing, Being in the Sun</p>
+                        <p><strong>Future Plans:</strong> College</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>Hazel grew throughout high school—physically, spiritually, emotionally, and academically. Cheer played a significant role in shaping her high school journey.</p>
+                    <p>Hazel loves her friends and getting to know people. She is creative, artistic, and makes the world a colorful place. She enjoys surfing, snow skiing and spending time in the sun.</p>
+                    <p>She plans to attend college after graduation.</p>
+                    <p><strong>Advice:</strong> "Be kind and positive."</p>
+                </div>
+            </div>
+            
+            <!-- James Wytiaz -->
+            <div id="james-wytiaz" class="senior-card">
+                <div class="senior-info">
+                    <div class="senior-photo">
+                        <span>Photo</span>
+                    </div>
+                    <div class="senior-details">
+                        <h2>James Wytiaz</h2>
+                        <p><strong>Activities:</strong> Marching Band, Model United Nations, Jazz Band</p>
+                        <p><strong>Interests:</strong> Engineering, Aviation, Music, Architecture</p>
+                        <p><strong>Future Plans:</strong> University of Utah with Scholarship, Mission</p>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>James challenged himself in high school to take as many advanced courses as possible. He joined the marching band as a freshman and competed all four years, earning multiple awards, distinctions, 1st places, state, regionally, and nationally. James loved to represent the United States during Model United Nations and won Best Resolution this year.</p>
+                    <p>James is a born engineer. Since he arrived earthside he was taking things apart, drawing schematics for his inventions, analyzing why something did or didn't work, making everything more efficient, and building anything from scratch. He is a musician, pianist, and plays a mean trumpet. James loves all things design and architecture. But his true obsession is aviation.</p>
+                    <p>James has committed to the University of Utah with a scholarship, and will defer as he has opened his mission portal.</p>
+                    <p><strong>Advice:</strong> "Nobody is 'smart'. To be 'smart', you have to be knowledgeable. Take the highest classes you can, even if you procrastinate all of the work. Always look for the highest opportunities. You're more capable than you know, you just have to know how to know first."</p>
                 </div>
             </div>
         </div>
@@ -182,8 +453,7 @@
     
     <footer>
         <div class="container">
-            <p>Provo High School - Celebrating Our Seniors</p>
-            <p>1199 N University Ave, Provo, UT 84604 | (801) 373-6550</p>
+            <p>Class of 2025 - Celebrating Our Seniors</p>
         </div>
     </footer>
 </body>
