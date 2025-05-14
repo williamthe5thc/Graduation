@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Class of 2025 Senior Spotlights - Celebrating graduating seniors with their bios and future plans">
     <title>Class of 2025 - Senior Spotlights</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* CSS Reset for consistent rendering */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+        }
+        
+        /* Base styling */
+        :root {
+            --primary-color: #00205B;
+            --secondary-color: #f4f4f4;
+            --text-color: #333;
+            --light-color: #fff;
+            --border-radius: 8px;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            overflow-y: scroll;
         }
         
         .container {
@@ -21,9 +39,26 @@
             padding: 20px;
         }
         
+        /* Skip navigation for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 8px;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Header styles */
         header {
-            background-color: #00205B;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--light-color);
             text-align: center;
             padding: 30px 0;
             margin-bottom: 0;
@@ -31,27 +66,32 @@
         
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.5rem;
         }
         
         header p {
             margin: 10px 0 0;
-            font-size: 1.2em;
+            font-size: 1.2rem;
+        }
+        
+        /* Main content styles */
+        main {
+            padding: 20px 0;
         }
         
         .senior-bio {
-            background-color: white;
-            border-radius: 8px;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
             scroll-margin-top: 80px; /* Adjusted for fixed nav */
         }
         
         .senior-bio h2 {
-            color: #00205B;
+            color: var(--primary-color);
             margin-top: 0;
-            border-bottom: 2px solid #00205B;
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
@@ -65,17 +105,18 @@
             margin-top: 20px;
         }
         
+        /* Footer styles */
         footer {
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            background-color: #00205B;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--light-color);
         }
         
-        /* New Navigation Styles */
+        /* Navigation styles */
         .main-nav {
-            background-color: #00205B;
+            background-color: var(--primary-color);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -105,16 +146,24 @@
         
         .nav-menu a {
             display: block;
-            color: white;
+            color: var(--light-color);
             text-decoration: none;
             padding: 15px 15px;
-            transition: background-color 0.3s;
+            transition: var(--transition);
             font-size: 16px;
             text-align: center;
         }
         
-        .nav-menu a:hover {
+        .nav-menu a:hover,
+        .nav-menu a:focus {
             background-color: rgba(255,255,255,0.1);
+            outline: none;
+        }
+        
+        /* Accessibility focus indicators */
+        a:focus {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
         }
         
         /* Mobile navigation */
@@ -122,10 +171,14 @@
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--light-color);
             font-size: 24px;
             cursor: pointer;
             padding: 10px;
+        }
+        
+        .mobile-nav-toggle:focus {
+            outline: 2px solid #fff;
         }
         
         /* Mobile version styles */
@@ -168,7 +221,7 @@
             }
             
             header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
             
             .container {
@@ -176,13 +229,13 @@
             }
         }
         
-        /* Jump to top button */
+        /* Back to top button */
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #00205B;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--light-color);
             border: none;
             border-radius: 50%;
             width: 40px;
@@ -194,25 +247,54 @@
             opacity: 0;
             transition: opacity 0.3s;
             z-index: 999;
+            font-size: 20px;
+        }
+        
+        .back-to-top:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
         
         .back-to-top.show {
             opacity: 1;
         }
+        
+        /* Print styles - for accessibility */
+        @media print {
+            .main-nav, 
+            .back-to-top {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                font-size: 12pt;
+            }
+            
+            .senior-bio {
+                page-break-inside: avoid;
+                border: 1px solid #ddd;
+                margin: 15px 0;
+                box-shadow: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
         <div class="container">
             <h1>Class of 2025</h1>
             <p>Senior Spotlights</p>
         </div>
     </header>
     
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation" aria-label="Main Navigation">
         <div class="nav-container">
-            <button class="mobile-nav-toggle">☰</button>
-            <ul class="nav-menu">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">☰</button>
+            <ul id="nav-menu" class="nav-menu">
                 <li><a href="#zoe-deucher">Zoe D.</a></li>
                 <li><a href="#benjamin-woolstenhulme">Benjamin W.</a></li>
                 <li><a href="#max-collette">Max C.</a></li>
@@ -231,134 +313,134 @@
         </div>
     </nav>
     
-    <div class="container">
+    <main id="main-content" role="main" class="container">
         <!-- Zoe Deucher -->
-        <div id="zoe-deucher" class="senior-bio">
+        <article id="zoe-deucher" class="senior-bio">
             <h2>Zoe Deucher</h2>
             <p>Zoe is our freak of nature child when it comes to strength. She grew up playing soccer and flag football with the boys, and nobody in the family ever wanted to race her. She grew up on a boat so she likes fishing, swimming, water skiing, and wake boarding. During the winter she likes to snow ski.</p>
             <p>She is on a club track team that runs year round and on the Timpview track team where she runs sprints and throws javelin. Timpview has won the state championship the last two years in a row and is going for a three peat this year.</p>
             <p>In her words, her favorite part of school was that she got to know almost everyone at Timpview and had the chance to make friends from other schools, which made high school fun.</p>
             <p class="advice">Advice: "Don't worry too much about what others think or the drama that could be going on because it won't matter when you graduate. Be who you are and own it."</p>
-        </div>
+        </article>
         
         <!-- Benjamin Woolstenhulme -->
-        <div id="benjamin-woolstenhulme" class="senior-bio">
+        <article id="benjamin-woolstenhulme" class="senior-bio">
             <h2>Benjamin Woolstenhulme</h2>
             <p>I spent a lot of time in high school exploring the Wild West and playing with area orchestras and symphonies. I enjoyed classes that actually got to do cool things, like plating pennies with brass in chemistry class. I'm very grateful for all of the awesome teachers that did such a good job making the classes fun to go to.</p>
             <p>Interests/Sports/Hobbies: Computer programming, playing and writing music, reading funny science books, video games, hiking and camping</p>
             <p>Plans in the coming year or two: Go to the University of Utah for a year or two and then on a mission</p>
             <p class="advice">Wisdom your Senior wants to impart to younger high school students: Take some shop classes, they're fun, give hardly any homework, and I feel really proud anytime I look at one of the things I made.</p>
-        </div>
+        </article>
         
         <!-- Max Collette -->
-        <div id="max-collette" class="senior-bio">
+        <article id="max-collette" class="senior-bio">
             <h2>Max Collette</h2>
             <p>Graduating from Timpanogos High School</p>
             <p>Was on freshman basketball team and track team. Has completed the DLI program and is fluent in Spanish.</p>
             <p>Max loves sports of all kinds and trying new things. He has played basketball for years. Picked up golf last year and has created a passion for roller skating. Max also plays guitar and piano. Max has a happy demeanor, is a great traveler and a joy to be with. Our home will be less bright while Max is away.</p>
             <p>Max begins his mission on July 7th. He will be serving in the Knoxville Tennessee Spanish speaking mission.</p>
             <p class="advice">If something is not right in your life and not working for you, do the scary thing and have the courage to change it.</p>
-        </div>
+        </article>
         
         <!-- Sawyer Collette -->
-        <div id="sawyer-collette" class="senior-bio">
+        <article id="sawyer-collette" class="senior-bio">
             <h2>Sawyer Collette</h2>
             <p>Graduating from Timpview High School</p>
             <p>Sawyer has been on the Swim team for 4 years and plays water polo, was accepted into the national competition for high school ceramic arts and competed in Prostart food competitions.</p>
             <p>Sawyer loves to be in the water and has a passion and talent for playing water polo. Sawyer is very artistic and everything he creates is meticulous and beautiful. Sawyer is a fabulous cook. He also plays the piano and has a special talent for keeping track of everything in the house and finding it for his mother. His talents and calm demeanor will be greatly missed when he goes to college.</p>
             <p>Sawyer will be attending Utah State this Fall. He intends to study in the medical or dental field and check out Utah State's Chocolate making program.</p>
             <p class="advice">Sawyer is one of the strongest people I know. He has an ability to overcome really hard things. His wisdom is "If there is something you want to do or accomplish that is hard or scary, do it anyway. You can do it."</p>
-        </div>
+        </article>
         
         <!-- Kirsten Hoelzer -->
-        <div id="kirsten-hoelzer" class="senior-bio">
+        <article id="kirsten-hoelzer" class="senior-bio">
             <h2>Kirsten Hoelzer</h2>
             <p>Kirsten is graduating from Timpview High School. During her four years at Timpview, she has effectively balanced a rigorous academic load and extracurricular activities. Kirsten has been on the volleyball team and has also played club volleyball up until this current season. During her last semester of high school she has completed 160 hours of a medical assistant internship and will be receiving her MA certification.</p>
             <p>Kirsten will be attending BYU in the fall where she will be studying premed.</p>
             <p class="advice">Advice: Take a few classes (like Health, Fitness for Life, and Financial Literacy) online during the summer so you don't waste time taking them in school.</p>
-        </div>
+        </article>
         
         <!-- Madi Williams -->
-        <div id="madi-williams" class="senior-bio">
+        <article id="madi-williams" class="senior-bio">
             <h2>Madi Williams</h2>
             <p>Madi is graduating from Maser Prep Academy. She has plans to turn in her mission papers and begin serving in October. After her mission, Madi hopes to study interior design at UVU. She is a fun, bright girl and believes that everyone should take themselves less seriously and enjoy life more!</p>
-        </div>
+        </article>
         
         <!-- Madelyn Peterson -->
-        <div id="madelyn-peterson" class="senior-bio">
+        <article id="madelyn-peterson" class="senior-bio">
             <h2>Madelyn Peterson</h2>
             <p>Madelyn has loved to dance since she was a little girl. She started when she was 3 so she's spent the last 15 years of her life at a dance studio. The look on her face when she's dancing sums it all up. It is pure joy!!!</p>
             <p>Madelyn plans to attend BYU-I in the fall and then serve a mission next year.</p>
             <p>She has loved high school, even though it hasn't always been easy. She's endured some of the hardest things in life and done it with a smile. She's a ray of light, always willing to help and always willing to share her testimony that she's developed through some trying times.</p>
             <p class="advice">If she could tell the younger high school students anything it would be "Go to everything. Be involved. Enjoy your time in high school"</p>
-        </div>
+        </article>
         
         <!-- Hailey Jenks -->
-        <div id="hailey-jenks" class="senior-bio">
+        <article id="hailey-jenks" class="senior-bio">
             <h2>Hailey Jenks</h2>
             <p class="advice">Wisdom of Hailey</p>
             <p>The longer you wait to do an assignment the older you are, and some people believe the older you are the wiser you are. Therefore the longer you wait to do an assignment the more wise you will be.</p>
             <p>I loved my high school experience! I attended Spanish fork, timpview, and Timpanogos through my four years of high school! I joined FFA for two years and was the treasurer my second year. I was in the club FCCLA and competed in the star events for fashion design and places third in state and got a bronze medal at the national competition! For my senior year I enrolled into the cosmetology program at the MTECH in Spanish fork and am enjoying every second of it.</p>
-        </div>
+        </article>
         
         <!-- Aaron Taylor -->
-        <div id="aaron-taylor" class="senior-bio">
+        <article id="aaron-taylor" class="senior-bio">
             <h2>Aaron Taylor</h2>
             <p>Senior info: 2007 baby! I grew up in Provo and Spanish fork. I love animals, sewing, and the beauty industry. I played tennis if junior high and joined FFA and FCCLA for high school. Aaron transferred from Timpview to the Utah Academy of Sciences (UCAS) for his sophomore year. He's enjoyed taking classes on UVU campus, where he just received his associate's degree.</p>
             <p>Aaron loves to disc golf, fossil hunt, rockhound, play the cello, hang out with his girlfriend, Ivy, and spend time outdoors.</p>
             <p>Aaron plans to continue at UVU where he'll continue studying geology or another area of science.</p>
             <p>Aaron probably wouldn't have a piece of wisdom to share because he doesn't like being in the limelight, but by his life, you can see that he cares about being kind, thoughtful, and curious about people and the world.</p>
-        </div>
+        </article>
         
         <!-- Kate Reichner -->
-        <div id="kate-reichner" class="senior-bio">
+        <article id="kate-reichner" class="senior-bio">
             <h2>Kate Reichner</h2>
             <p>Kate is graduating from Timpview and has loved her time there. She has worked so hard in school and in sports. She was on the swim team and the cheer team for all four years. She was also a part of Student Government her junior and senior years. She loved the chance she had to get to know so many people, & has loved her friends and teachers at Timpview.</p>
             <p>Kate signed with the Utah Tech swim team, so she is headed to St. George in the fall. She's excited to swim in college- she's worked so hard to achieve that goal.</p>
             <p class="advice">Kate's advice for younger students is to get involved in clubs or sports to make good friends, and don't forget to have fun along the way! Create strong relationships with your teachers by participating in class and asking for help when needed. Stay organized, set goals, and take care of yourself so you can make the most of your high school experience.</p>
-        </div>
+        </article>
         
         <!-- Nick Schooley -->
-        <div id="nick-schooley" class="senior-bio">
+        <article id="nick-schooley" class="senior-bio">
             <h2>Nick Schooley</h2>
             <p>Looking back, high school was fun, but if you had asked me a few years ago that would definitely not have been my answer. Moving to a new State and new school in Utah from South Carolina was not fun. I sat alone at lunch for the first two weeks. Then I met a bozo named "The Jack," and things got better from there. I met some great friends at school and in the ward, and then discovered my new passion: snowboarding. I like soccer, basketball, snowboarding, bumming around, boating, backpacking and some other things too. Plans after high school first include serving a mission to San Antonio,Texas. When I return, I'll be attending BYU here in Provo.</p>
             <p class="advice">Some mighty high school Wisdom I can bestow is, if your mom is making you take AP calc, take BC for the first semester, then switch to AB the second semester. You'll learn it much better. Also, avoid going number 2 in the school bathrooms, and don't bum around (too much).</p>
-        </div>
+        </article>
         
         <!-- Jack Weaver -->
-        <div id="jack-weaver" class="senior-bio">
+        <article id="jack-weaver" class="senior-bio">
             <h2>Jack Weaver</h2>
             <p>Senior's Information</p>
             <p>-Brief history of his/her high school experience: Jack grew throughout high school---physically, spiritually, emotionally, and academically. Track played a significant role in shaping his high school journey</p>
             <p>-Interests/Sports/Hobbies: Jack loves all sports, basketball, skiing, football, surfing, hiking, pickleball and skateboarding. He enjoys eating well, nutrition, the science of exercise and considers raw milk and honey a great treat. Every so often you will find Jack playing the guitar or selling window washing.</p>
             <p>-Plans in the coming year or two: Serve mission in El Salvador West, starting August 18 and college upon completion.</p>
-            <p class="advice">-Wisdom your Senior wants to impart to younger high school students: Drop out if you can.</p>
-        </div>
+            <p class="advice">-Wisdom your Senior wants to impart to younger high school students: Drop out if you can haha.</p>
+        </article>
         
         <!-- Hazel Weaver -->
-        <div id="hazel-weaver" class="senior-bio">
+        <article id="hazel-weaver" class="senior-bio">
             <h2>Hazel Weaver</h2>
             <p>Senior's Information</p>
             <p>-Brief history of his/her high school experience: Hazel grew throughout high school---physically, spiritually, emotionally, and academically. Cheer played a significant role in shaping her high school journey</p>
             <p>-Interests/Sports/Hobbies: Hazel loves her friends and getting to know people. She is creative, artistic, and makes the world a colorful place. She enjoys surfing, snow skiing and spending time in the sun.</p>
             <p>-Plans in the coming year or two: College</p>
             <p class="advice">-Wisdom your Senior wants to impart to younger high school students: Be kind and positive.</p>
-        </div>
+        </article>
         
         <!-- James Wytiaz -->
-        <div id="james-wytiaz" class="senior-bio">
+        <article id="james-wytiaz" class="senior-bio">
             <h2>James Wytiaz</h2>
             <p>Brief high school experience: James challenged himself in high school to take as many advanced courses as possible. He joined the marching band as a freshman and competed all four years, earning multiple awards, distinctions, 1st places, state, regionally, and nationally. James loved to represent the United States during Model United Nations and won Best Resolution this year. He has had the honor of being the trumpet solo for the past 4 Memorial Day and Veterans Day commemorations, and serving as a Trumpeteer at many funerals for veterans. In fact, he is missing this evening to perform his last jazz band concert. James has a love of academics, teaching himself Japanese to go with his fluent Spanish, earning 5s in AP Computer Science, AP Calculus, and more. Along the way he made great friends with his easy-going and bright personality.</p>
             <p>Interests and Hobbies: James is a born engineer. Since he arrived earthside he was taking things apart, drawing schematics for his inventions, analyzing why something did or didn't work, making everything more efficient, and building anything from scratch. He is a musician, pianist, and plays a mean trumpet. James loves all things design and architecture. But his true obsession is aviation. He can identify any plane in the sky, asks his parents to send him the itinerary and picture of every plane they fly, so he can tell them if it has the GE or Rolls Royce engine, when the plane rolled off the line, a short history of its maintenance logs, and where the plane has been and where it's going. Any flight we take must account for time to be at the airport for plane-spotting, to meet the pilot and first officers, and ask questions in the cockpit.</p>
             <p>Parent Comment: James has been a joy in our family. He is a peacemaker with a steady heart. He serves his family and community with dedication and a happy disposition. He sees needs and fills them. We are so excited to see his future endeavors!</p>
             <p>Future Plans: James has committed to the University of Utah with a scholarship, and will defer as he has opened his mission portal.</p>
             <p class="advice">James advice: Nobody is "smart". To be "smart", you have to be knowledgeable. Take the highest classes you can, even if you procrastinate all of the work. Always look for the highest opportunities. You're more capable than you know, you just have to know how to know first.</p>
-        </div>
-    </div>
+        </article>
+    </main>
     
-    <a href="#" class="back-to-top">↑</a>
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
     
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>Class of 2025 - Celebrating Our Seniors</p>
         </div>
@@ -371,8 +453,10 @@
             const navMenu = document.querySelector('.nav-menu');
             
             mobileToggle.addEventListener('click', function() {
+                const isExpanded = navMenu.classList.contains('active');
                 navMenu.classList.toggle('active');
-                mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+                mobileToggle.textContent = isExpanded ? '☰' : '✕';
+                mobileToggle.setAttribute('aria-expanded', !isExpanded);
             });
             
             // Close menu when clicking a link
@@ -381,6 +465,7 @@
                 link.addEventListener('click', function() {
                     navMenu.classList.remove('active');
                     mobileToggle.textContent = '☰';
+                    mobileToggle.setAttribute('aria-expanded', 'false');
                 });
             });
             
@@ -401,6 +486,17 @@
                     top: 0,
                     behavior: 'smooth'
                 });
+            });
+            
+            // Keyboard navigation improvements
+            document.addEventListener('keydown', function(e) {
+                // ESC key closes mobile menu
+                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileToggle.textContent = '☰';
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    mobileToggle.focus();
+                }
             });
         });
     </script>
