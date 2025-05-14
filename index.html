@@ -26,7 +26,7 @@
             color: white;
             text-align: center;
             padding: 30px 0;
-            margin-bottom: 30px;
+            margin-bottom: 0;
         }
         
         header h1 {
@@ -45,7 +45,7 @@
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            scroll-margin-top: 30px;
+            scroll-margin-top: 80px; /* Adjusted for fixed nav */
         }
         
         .senior-bio h2 {
@@ -73,42 +73,131 @@
             color: white;
         }
         
-        .nav-index {
-            background-color: #f0f0f0;
-            padding: 15px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-        }
-        
-        .nav-index h3 {
-            margin-top: 0;
-            color: #00205B;
-        }
-        
-        .nav-index ul {
-            list-style-type: none;
+        /* New Navigation Styles */
+        .main-nav {
+            background-color: #00205B;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             padding: 0;
-            margin: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .nav-menu {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
         }
         
-        .nav-index li {
-            margin-bottom: 5px;
+        .nav-menu li {
+            margin: 0;
+            padding: 0;
         }
         
-        .nav-index a {
+        .nav-menu a {
+            display: block;
+            color: white;
             text-decoration: none;
-            color: #00205B;
-            background-color: #e0e0e0;
-            padding: 5px 10px;
-            border-radius: 4px;
-            display: inline-block;
+            padding: 15px 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            text-align: center;
         }
         
-        .nav-index a:hover {
-            background-color: #d0d0d0;
+        .nav-menu a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Mobile navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        /* Mobile version styles */
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            
+            .nav-menu.active {
+                max-height: 500px;
+                transition: max-height 0.5s ease-in;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+            }
+            
+            .nav-menu a {
+                padding: 12px 15px;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .senior-bio {
+                padding: 20px;
+                scroll-margin-top: 60px;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        /* Jump to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00205B;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
         }
     </style>
 </head>
@@ -120,27 +209,29 @@
         </div>
     </header>
     
-    <div class="container">
-        <div class="nav-index">
-            <h3>Graduate Directory</h3>
-            <ul>
-                <li><a href="#zoe-deucher">Zoe Deucher</a></li>
-                <li><a href="#benjamin-woolstenhulme">Benjamin Woolstenhulme</a></li>
-                <li><a href="#max-collette">Max Collette</a></li>
-                <li><a href="#sawyer-collette">Sawyer Collette</a></li>
-                <li><a href="#kirsten-hoelzer">Kirsten Hoelzer</a></li>
-                <li><a href="#madi-williams">Madi Williams</a></li>
-                <li><a href="#madelyn-peterson">Madelyn Peterson</a></li>
-                <li><a href="#hailey-jenks">Hailey Jenks</a></li>
-                <li><a href="#aaron-taylor">Aaron Taylor</a></li>
-                <li><a href="#kate-reichner">Kate Reichner</a></li>
-                <li><a href="#nick-schooley">Nick Schooley</a></li>
-                <li><a href="#jack-weaver">Jack Weaver</a></li>
-                <li><a href="#hazel-weaver">Hazel Weaver</a></li>
-                <li><a href="#james-wytiaz">James Wytiaz</a></li>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <button class="mobile-nav-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#zoe-deucher">Zoe D.</a></li>
+                <li><a href="#benjamin-woolstenhulme">Benjamin W.</a></li>
+                <li><a href="#max-collette">Max C.</a></li>
+                <li><a href="#sawyer-collette">Sawyer C.</a></li>
+                <li><a href="#kirsten-hoelzer">Kirsten H.</a></li>
+                <li><a href="#madi-williams">Madi W.</a></li>
+                <li><a href="#madelyn-peterson">Madelyn P.</a></li>
+                <li><a href="#hailey-jenks">Hailey J.</a></li>
+                <li><a href="#aaron-taylor">Aaron T.</a></li>
+                <li><a href="#kate-reichner">Kate R.</a></li>
+                <li><a href="#nick-schooley">Nick S.</a></li>
+                <li><a href="#jack-weaver">Jack W.</a></li>
+                <li><a href="#hazel-weaver">Hazel W.</a></li>
+                <li><a href="#james-wytiaz">James W.</a></li>
             </ul>
         </div>
-        
+    </nav>
+    
+    <div class="container">
         <!-- Zoe Deucher -->
         <div id="zoe-deucher" class="senior-bio">
             <h2>Zoe Deucher</h2>
@@ -265,10 +356,53 @@
         </div>
     </div>
     
+    <a href="#" class="back-to-top">↑</a>
+    
     <footer>
         <div class="container">
             <p>Class of 2025 - Celebrating Our Seniors</p>
         </div>
     </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Close menu when clicking a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileToggle.textContent = '☰';
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
